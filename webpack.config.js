@@ -6,9 +6,12 @@ module.exports = {
 	entry: { main: './src/index.js' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: 'http://localhost:8080/',
-		filename: 'main.js'
+		publicPath: '/',
+		filename: 'index.js'
 	},
+	devServer: {
+			index: 'index.html'
+	    },
 	module: {
 		rules: [
 			{
@@ -38,8 +41,8 @@ module.exports = {
 			{
 				test: /\.(jpe?g|png)$/i,
 				loader: multi(
-					'file-loader?name=/img/[name]_[hash:7].webp!webp-loader?{quality: 95}',
-					'file-loader?name=/img/[name]_[hash:7].[ext]'
+					'file-loader?name=[name]_[hash:7].webp!webp-loader?{quality: 95}',
+					'file-loader?name=[name]_[hash:7].[ext]'
 				)
 			}
 		]

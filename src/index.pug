@@ -5,7 +5,8 @@ html
     style
       include style.sass
   body
-    div bye5
+    div bye6
+      div kfgj;
     picture
-      source(type='image/webp', srcset=require('!!file-loader?name=/img/[name]_[hash:7].webp!./img/as.jpg'))
-      img(src=require('!!file-loader?name=/img/[name]_[hash:7].[ext]!./img/as.jpg'))
+      source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/as.jpg'))
+      img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/as.jpg'))

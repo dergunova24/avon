@@ -1,0 +1,54 @@
+const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const multi = require('multi-loader');
+module.exports = {
+	entry: { main: './src/index.js' },
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: 'http://localhost:8080/',
+		filename: 'main.js'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader"
+				}
+			},
+			{
+				test: /\.sass$/,
+				use: [
+						{loader: "style-loader"},
+					{loader: "css-loader"},
+					{loader: "sass-loader",
+				    	options: {implementation: require("sass")}
+					}
+				]
+			},
+			{test: /\.(pug|jade)$/, loader: 'pug-loader'},
+			{test: /\.(gif|svg|woff|tff|wav|mp3|webp)$/i,
+				loader: "file-loader",
+				options: {
+					name: '/img/[name]_[hash:7].[ext]',
+				}
+			},
+			{
+				test: /\.(jpe?g|png)$/i,
+				loader: multi(
+					'file-loader?name=/img/[name]_[hash:7].webp!webp-loader?{quality: 95}',
+					'file-loader?name=/img/[name]_[hash:7].[ext]'
+				)
+			}
+		]
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			filename: 'index.html',
+			template: 'src/index.pug',
+		}),
+		new CleanWebpackPlugin(['dist/*'])
+	]
+}

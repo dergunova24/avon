@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title 'webpack'
+    style
+      include style.sass
+  body
+    div bye5
+    picture
+      source(type='image/webp', srcset=require('!!file-loader?name=/img/[name]_[hash:7].webp!./img/as.jpg'))
+      img(src=require('!!file-loader?name=/img/[name]_[hash:7].[ext]!./img/as.jpg'))

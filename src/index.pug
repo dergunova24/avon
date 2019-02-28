@@ -1,12 +1,28 @@
 doctype html
 html
   head
-    title 'webpack'
+    title 'AVON Norm'
     style
       include style.sass
   body
-    div bye6
-      div kfgj;
-    picture
-      source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/as.jpg'))
-      img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/as.jpg'))
+    div#header
+      //- picture
+      //-   source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/as.jpg'))
+      //-   img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/as.jpg'))
+      h1#title AVON
+      a#contact-phone(href='tel:+89022323206') 8 (902) 232-32-06
+      #caption Стань представителем Эйвон!
+      #genertext Регистрация представителем Эйвон не накладывает никаких обязательств, ни по минимальной сумме, ни по периодичности заказа. Регистрация лишь дает возможность покупать качественную косметику (и не только) со скидками до 30% и дополнительным призом.
+      form(action='reg.php')#quik-form
+        .caption Успей зарегистрироваться!
+        input(type='tel', placeholder='+7(xxx) xxx-xx-xx')
+        input(type='text', placeholder='Имя')
+        input(type='text', placeholder='Фамилия')
+        input(type='text', placeholder='Отчество')
+        input(type='email', placeholder='Электронная почта')
+        input(type='date', placeholder='Дата рождения')
+        input(type='text', placeholder='Ваш адрес')
+        input#agree-terms(type='checkbox')
+        label(for='agree-terms') Принимаю правила регистрации
+        input.button(type='submit', value='Зарегистрироваться')
+    

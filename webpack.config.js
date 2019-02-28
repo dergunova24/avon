@@ -22,6 +22,13 @@ module.exports = {
 				}
 			},
 			{
+			  test: /\.(otf)$/,
+			  loader: 'url-loader?limit=100000',
+			  options: {
+			  	name: '/fonts/[name].[ext]',
+			  }
+			},
+			{
 				test: /\.sass$/,
 				use: [
 						{loader: "style-loader"},
@@ -32,7 +39,7 @@ module.exports = {
 				]
 			},
 			{test: /\.(pug|jade)$/, loader: 'pug-loader'},
-			{test: /\.(gif|svg|woff|tff|wav|mp3|webp)$/i,
+			{test: /\.(gif|svg|webp)$/i,
 				loader: "file-loader",
 				options: {
 					name: '/img/[name]_[hash:7].[ext]',

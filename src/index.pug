@@ -4,6 +4,7 @@ html
     title 'AVON Norm'
     style
       include style.sass
+    //- link(type='text/css', rel='stylesheet', href=require('./style.sass'))
   body
     div#header
       //- picture
@@ -25,6 +26,87 @@ html
         input#agree-terms(type='checkbox')
         label(for='agree-terms') Принимаю правила регистрации
         input.button(type='submit', value='Зарегистрироваться')
+    #cards
+        picture.card
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card1.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card1.png'))
+        picture.card
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card2.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card2.png'))
+        picture.card
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card3.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card3.png'))
+    #advantages
+        picture#header-back
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+        h2 Преимущества Avon
+        .advantage
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage1.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage1.png'))
+            .title Удобная доставка
+            .description Множество видов доставки – от курьерской, до доставки в постоматы или почтовые отделения
+        .advantage
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage2.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage2.png'))
+            .title Сертификат
+            .description Вся продукция имеет необходимые сертификаты по всем категориям
+        .advantage
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage3.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage3.png'))
+            .title Доступ
+            .description Доступ к специальным каталогам, акциям, распродажам и скидкам, которые доступны только представителям компании
+        .advantage
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage4.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage4.png'))
+            .title Множество товаров
+            .description Тысячи товаров, от косметики до одежды, кухонных принадлежностей и стильных аксессуаров
+    #do-it
+        .do
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
+            .description Получай за заказы баллы и приобретай продукцию с дополнительными скидками. Все это для представителей AVON
+        .do
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
+            .description Возможность независимого заработка – десятки тысяч людей строят карьеру вместе с Эйвон. Мы окажем вам подробную консультацию и ответим на все вопросы
+        .do
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
+            .description Вы получите нашу поддержку – мы не оставим вас наедине со сложностями. Мы всегда окажем вам необходимую консультацию и по вопросам размещения заказа и по возможности заработка
+        #no-garantee Без обязательств!
+    #steps
+        picture#header-back
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+        h2 Этапы регистрации в Avon
+        .step
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step1.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step1.png'))
+            .description Вы оставляете на сайте заявку
+        .step
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step2.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step2.png'))
+            .description Перезваниваем Вам для подтверждения заявки
+        .step
+            picture
+                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step3.png'))
+                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step3.png'))
+            .description Вы получаете специальный номер, который и дает доступ ко всем возможностям и преимуществам представителя AVON
+        .button Зарегистрироваться
+    #news
+        picture#header-back
+            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+        h2 Новости и акции сайта
     #to-top
       object(type="image/svg+xml", data=require("./img/arrow.svg"))
-        img(src=require("svg-to-png-loader?height=32&width=32!./img/arrow.svg"), alt="image format png")

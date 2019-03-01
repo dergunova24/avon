@@ -1,10 +1,19 @@
+@mixin shadow
+    -webkit-box-shadow: 0px 7px 7px 0px rgba(50, 50, 50, 0.19)
+    -moz-box-shadow:    0px 7px 7px 0px rgba(50, 50, 50, 0.19)
+    box-shadow:         0px 7px 7px 0px rgba(50, 50, 50, 0.19)
+
 body
     font-family: "GothaProLig", sans-serif
     color: $basic-font-color
     font-size: 20px
     padding: 0
     margin: 0
-
+h2
+    font-family: 'PlayfairDisplay-Regular'
+    font-size: 38px
+    text-align: center
+    margin-bottom: 50px
 a
      text-decoration: none
 
@@ -25,28 +34,27 @@ input[type='text'], input[type='tel'], input[type='email'], input[type='date']
 .button
     width: 270px
     height: 60px
+    line-height: 60px
     display: block
     border-radius: 15px
     background-color: $soft-pink
     color: white
-    transition: ease 0.9s
     font-size: 19px
     font-family: "GothaProLig", sans-serif
     margin: 0 auto
     margin-top: 20px
     border: none
-    margin
-    -webkit-box-shadow: 2px 22px 19px -18px rgba(0,0,0,0.16)
-    -moz-box-shadow: 2px 22px 19px -18px rgba(0,0,0,0.16)
-    box-shadow: 2px 22px 19px -18px rgba(0,0,0,0.16)
+    transition: ease 0.9s
 
 .button:hover
     background-color: $pink
     cursor: pointer
-    -webkit-box-shadow: 2px 25px 19px -18px rgba(0,0,0,0.2)
-    -moz-box-shadow: 2px 25px 19px -18px rgba(0,0,0,0.2)
-    box-shadow: 2px 25px 19px -18px rgba(0,0,0,0.2)
+    @include shadow
 
-
-
-
+#header-back
+    width: 100%
+    display: block
+    img
+        margin: 0 auto
+        display: block
+        margin-bottom: -100px

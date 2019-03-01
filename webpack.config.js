@@ -22,7 +22,7 @@ module.exports = {
 				}
 			},
 			{
-			  test: /\.(otf)$/,
+			  test: /\.(otf|ttf)$/,
 			  loader: 'url-loader?limit=100000',
 			  options: {
 			  	name: '/fonts/[name].[ext]',
@@ -42,7 +42,7 @@ module.exports = {
 			{test: /\.(gif|svg|webp)$/i,
 				loader: "file-loader",
 				options: {
-					name: '/img/[name]_[hash:7].[ext]',
+					name: '[name]_[hash:7].[ext]',
 				}
 			},
 			{

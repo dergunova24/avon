@@ -4,29 +4,26 @@ html
     title 'AVON Norm'
     style
       include style.sass
-    //- link(type='text/css', rel='stylesheet', href=require('./style.sass'))
   body
-    div#header
-      //- picture
-      //-   source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/as.jpg'))
-      //-   img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/as.jpg'))
-      h1#title AVON
-      a#contact-phone(href='tel:+89022323206') 8 (902) 232-32-06
-      #caption Стань представителем Эйвон!
-      #genertext Регистрация представителем Эйвон не накладывает никаких обязательств, ни по минимальной сумме, ни по периодичности заказа. Регистрация лишь дает возможность покупать качественную косметику (и не только) со скидками до 30% и дополнительным призом.
-      form(action='reg.php')#quik-form
-        .caption Успей зарегистрироваться!
-        input(type='tel', placeholder='+7(xxx) xxx-xx-xx')
-        input(type='text', placeholder='Имя')
-        input(type='text', placeholder='Фамилия')
-        input(type='text', placeholder='Отчество')
-        input(type='email', placeholder='Электронная почта')
-        input(type='date', placeholder='Дата рождения')
-        input(type='text', placeholder='Ваш адрес')
-        input#agree-terms(type='checkbox')
-        label(for='agree-terms') Принимаю правила регистрации
-        input.button(type='submit', value='Зарегистрироваться')
-    #cards
+    #header.screen
+      .screen-content
+        h1#title AVON
+        a#contact-phone(href='tel:+89022323206') 8 (902) 232-32-06
+        #caption Стань представителем Эйвон!
+        #genertext Регистрация представителем Эйвон не накладывает никаких обязательств, ни по минимальной сумме, ни по периодичности заказа. Регистрация лишь дает возможность покупать качественную косметику (и не только) со скидками до 30% и дополнительным призом.
+        h2 Успей зарегистрироваться!
+        form(action='reg.php')#quik-form
+          input(type='tel', name='phone', placeholder='+7(xxx) xxx-xx-xx')
+          input(type='text', name='firstname', placeholder='Имя')
+          input(type='text', name='lastname', placeholder='Фамилия')
+          input(type='text', name='patronymic', placeholder='Отчество')
+          input(type='email', name='email', placeholder='Электронная почта')
+          input(type='date', name='birthdate', placeholder='Дата рождения')
+          input(type='text', name='address', placeholder='Ваш адрес')
+          input#agree-terms(type='checkbox')
+          label(for='agree-terms') Принимаю правила регистрации
+          input.button#quick-reg(type='submit', value='Зарегистрироваться')
+    #cards.screen
         picture.card
             source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card1.png'))
             img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card1.png'))
@@ -36,7 +33,7 @@ html
         picture.card
             source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card3.png'))
             img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card3.png'))
-    #advantages
+    #advantages.screen
         picture#header-back
             source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
             img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
@@ -65,7 +62,7 @@ html
                 img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage4.png'))
             .title Множество товаров
             .description Тысячи товаров, от косметики до одежды, кухонных принадлежностей и стильных аксессуаров
-    #do-it
+    #do-it.screen
         .do
             picture
                 source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
@@ -82,7 +79,7 @@ html
                 img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
             .description Вы получите нашу поддержку – мы не оставим вас наедине со сложностями. Мы всегда окажем вам необходимую консультацию и по вопросам размещения заказа и по возможности заработка
         #no-garantee Без обязательств!
-    #steps
+    #steps.screen
         picture#header-back
             source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
             img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
@@ -102,11 +99,140 @@ html
                 source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step3.png'))
                 img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step3.png'))
             .description Вы получаете специальный номер, который и дает доступ ко всем возможностям и преимуществам представителя AVON
-        .button Зарегистрироваться
-    #news
+        .button.scrollbtn Зарегистрироваться
+    #news.screen
         picture#header-back
             source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
             img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
         h2 Новости и акции сайта
+        .post
+            a.title(href='ya.ru') Скачайте новый каталог №4
+            img(src=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
+            .description LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
+            a.download(href='ya.ru') Скачать
+        .post
+            a.title(href='ya.ru') Самая лучшая новость
+            .description LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim. LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
+            a.download(href='ya.ru') Скачать
+    #full-reg.screen
+        h2 Полная регистрация
+        form(action='fullreg.php')#full-form
+            input(type='tel', name='phone', placeholder='+7(xxx) xxx-xx-xx')
+            input(type='text', name='firstname', placeholder='Имя')
+            input(type='text', name='lastname', placeholder='Фамилия')
+            input(type='text', name='patronymic', placeholder='Отчество')
+            input(type='email', name='email', placeholder='Электронная почта')
+            input(type='date', name='birthdate', placeholder='Дата рождения')
+            h3 Паспортные данные
+            input(type='text', name='passportseries', placeholder='Серия паспорта')
+            input(type='text', name='passportnumber', placeholder='Номер паспорта')
+            input(type='text', name='passportkodpodr', placeholder='Код подразделения')
+            input(type='date', name='passportdate', placeholder='Дата выдачи')
+            input(type='date', name='passportmanufacturer', placeholder='Кем выдан')
+            h3 Адрес постоянного проживания
+            input(type='text', name='real_postindex', placeholder='Почтовый индекс')
+            select Регион
+                option(value="0") Выберите область
+                option(value="АЛТАЙ РЕСПУБЛИКА") АЛТАЙ РЕСПУБЛИКА
+                option(value="АЛТАЙСКИЙ КРАЙ") АЛТАЙСКИЙ КРАЙ
+                option(value="АМУРСКАЯ") АМУРСКАЯ
+                option(value="АРХАНГЕЛЬСКАЯ") АРХАНГЕЛЬСКАЯ
+                option(value="АСТРАХАНСКАЯ") АСТРАХАНСКАЯ
+                option(value="БАШКИРИЯ РЕСП") БАШКИРИЯ РЕСП
+                option(value="БЕЛГОРОДСКАЯ") БЕЛГОРОДСКАЯ
+                option(value="БРЯНСКАЯ") БРЯНСКАЯ
+                option(value="БУРЯТИЯ РЕСП") БУРЯТИЯ РЕСП
+                option(value="ВЛАДИМИРСКАЯ") ВЛАДИМИРСКАЯ
+                option(value="ВОЛГОГРАДСКАЯ") ВОЛГОГРАДСКАЯ
+                option(value="ВОЛОГОДСКАЯ") ВОЛОГОДСКАЯ
+                option(value="ВОРОНЕЖСКАЯ") ВОРОНЕЖСКАЯ
+                option(value="ЕВРЕЙСКАЯ АВТОНОМНАЯ ОБ") ЕВРЕЙСКАЯ АВТОНОМНАЯ ОБ
+                option(value="ЗАБАЙКАЛЬСКИЙ КРАЙ") ЗАБАЙКАЛЬСКИЙ КРАЙ
+                option(value="ИВАНОВСКАЯ") ИВАНОВСКАЯ
+                option(value="ИРКУТСКАЯ") ИРКУТСКАЯ
+                option(value="КАЛИНИНГРАДСКАЯ") КАЛИНИНГРАДСКАЯ
+                option(value="КАЛМЫКИЯ РЕСП") КАЛМЫКИЯ РЕСП
+                option(value="КАЛУЖСКАЯ") КАЛУЖСКАЯ
+                option(value="КАРАЧАЕВО-ЧЕРКЕССКАЯ РЕ") КАРАЧАЕВО-ЧЕРКЕССКАЯ РЕ
+                option(value="КАРЕЛИЯ РЕСП") КАРЕЛИЯ РЕСП
+                option(value="КЕМЕРОВСКАЯ") КЕМЕРОВСКАЯ
+                option(value="КИРОВСКАЯ") КИРОВСКАЯ
+                option(value="КОМИ РЕСП") КОМИ РЕСП
+                option(value="КОСТРОМСКАЯ") КОСТРОМСКАЯ
+                option(value="КРАСНОДАРСКИЙ КРАЙ") КРАСНОДАРСКИЙ КРАЙ
+                option(value="КРАСНОЯРСКИЙ КРАЙ") КРАСНОЯРСКИЙ КРАЙ
+                option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                option(value="КУРГАНСКАЯ") КУРГАНСКАЯ
+                option(value="КУРСКАЯ") КУРСКАЯ
+                option(value="ЛЕНИНГРАДСКАЯ") ЛЕНИНГРАДСКАЯ
+                option(value="ЛИПЕЦКАЯ") ЛИПЕЦКАЯ
+                option(value="МАРИЙ ЭЛ РЕСП") МАРИЙ ЭЛ РЕСП
+                option(value="МОРДОВИЯ РЕСП") МОРДОВИЯ РЕСП
+                option(value="МОСКВА") МОСКВА
+                option(value="МОСКОВСКАЯ") МОСКОВСКАЯ
+                option(value="МУРМАНСКАЯ") МУРМАНСКАЯ
+                option(value="НИЖЕГОРОДСКАЯ") НИЖЕГОРОДСКАЯ
+                option(value="НОВГОРОДСКАЯ") НОВГОРОДСКАЯ
+                option(value="НОВОСИБИРСКАЯ") НОВОСИБИРСКАЯ
+                option(value="ОМСКАЯ") ОМСКАЯ
+                option(value="ОРЕНБУРГСКАЯ") ОРЕНБУРГСКАЯ
+                option(value="ОРЛОВСКАЯ") ОРЛОВСКАЯ
+                option(value="ПЕНЗЕНСКАЯ") ПЕНЗЕНСКАЯ
+                option(value="ПЕРМСКИЙ КРАЙ") ПЕРМСКИЙ КРАЙ
+                option(value="ПРИМОРСКИЙ КРАЙ") ПРИМОРСКИЙ КРАЙ
+                option(value="ПСКОВСКАЯ") ПСКОВСКАЯ
+                option(value="РОСТОВСКАЯ") РОСТОВСКАЯ
+                option(value="РЯЗАНСКАЯ") РЯЗАНСКАЯ
+                option(value="САМАРСКАЯ") САМАРСКАЯ
+                option(value="САНКТ-ПЕТЕРБУРГ") САНКТ-ПЕТЕРБУРГ
+                option(value="САРАТОВСКАЯ") САРАТОВСКАЯ
+                option(value="САХАЛИНСКАЯ") САХАЛИНСКАЯ
+                option(value="СВЕРДЛОВСКАЯ") СВЕРДЛОВСКАЯ
+                option(value="СМОЛЕНСКАЯ") СМОЛЕНСКАЯ
+                option(value="СТАВРОПОЛЬСКИЙ КРАЙ") СТАВРОПОЛЬСКИЙ КРАЙ
+                option(value="ТАМБОВСКАЯ") ТАМБОВСКАЯ
+                option(value="ТАТАРСТАН РЕСП") ТАТАРСТАН РЕСП
+                option(value="ТВЕРСКАЯ") ТВЕРСКАЯ
+                option(value="ТОМСКАЯ") ТОМСКАЯ
+                option(value="ТУЛЬСКАЯ") ТУЛЬСКАЯ
+                option(value="ТЫВА РЕСПУБЛИКА") ТЫВА РЕСПУБЛИКА
+                option(value="ТЮМЕНСКАЯ") ТЮМЕНСКАЯ
+                option(value="УДМУРТСКАЯ РЕСП") УДМУРТСКАЯ РЕСП
+                option(value="УЛЬЯНОВСКАЯ") УЛЬЯНОВСКАЯ
+                option(value="УСТЬ-ОРДЫНСКИЙ АО") УСТЬ-ОРДЫНСКИЙ АО
+                option(value="ХАБАРОВСКИЙ КРАЙ") ХАБАРОВСКИЙ КРАЙ
+                option(value="ХАКАСИЯ РЕСП") ХАКАСИЯ РЕСП
+                option(value="ХАНТЫ-МАНСИЙСКИЙ АО") ХАНТЫ-МАНСИЙСКИЙ АО
+                option(value="ЧЕЛЯБИНСКАЯ") ЧЕЛЯБИНСКАЯ
+                option(value="ЧУВАШСКАЯ РЕСП") ЧУВАШСКАЯ РЕСП
+                option(value="ЯРОСЛАВСКАЯ") ЯРОСЛАВСКАЯ
+            input(type='text', name='real_district', placeholder='Район')
+            input(type='text', name='real_location', placeholder='Населенный пункт')
+            input(type='text', name='real_street', placeholder='Улица')
+            input(type='text', name='real_house', placeholder='Дом')
+            input(type='text', name='real_korpus', placeholder='Корпус')
+            input(type='text', name='real_apartament', placeholder='Квартира')
+            h3 Адрес фактического проживания
+            input#adresses-match(type='checkbox')
+            label(for='agree-terms') Совпадает с адресом постоянного проживания
+            input(type='text', name='fact_postindex', placeholder='Почтовый индекс')
+            input(type='text', name='fact_region', placeholder='Регион')
+            input(type='text', name='fact_district', placeholder='Район')
+            input(type='text', name='fact_location', placeholder='Населенный пункт')
+            input(type='text', name='fact_street', placeholder='Улица')
+            input(type='text', name='fact_house', placeholder='Дом')
+            input(type='text', name='fact_korpus', placeholder='Корпус')
+            input(type='text', name='fact_apartament', placeholder='Квартира')
+
+            input#adresses-match(type='checkbox')
+            label(for='agree-terms') Я уже работал(а) с AVON
+            br
+            input#agree-terms(type='checkbox')
+            label(for='agree-terms') Принимаю правила регистрации
+            input.button(type='submit', value='Зарегистрироваться')
     #to-top
-      object(type="image/svg+xml", data=require("./img/arrow.svg"))
+        img(src=require("./img/arrow.svg"))

@@ -1,0 +1,20 @@
+$tablet-screen-width: 1440px
+$mobile-screen-width: 900px
+$small-screen-width: 550px
+
+@mixin respond-to($media)
+    @if $media == small-screens
+        @media only screen and (max-width: $small-screen-width)
+            @content
+
+    @if $media == mobile-screens
+        @media only screen and (max-width: $mobile-screen-width)
+            @content
+
+    @else if $media == tablet-screens
+        @media only screen and (min-width: $mobile-screen-width + 1) and (max-width: $tablet-screen-width)
+            @content
+
+    @else if $media == tablet-less-screens
+        @media only screen and (max-width: $tablet-screen-width)
+            @content

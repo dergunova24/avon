@@ -1,5 +1,6 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const multi = require('multi-loader');
 module.exports = {
@@ -59,6 +60,15 @@ module.exports = {
 			filename: 'index.html',
 			template: 'src/index.pug',
 		}),
-		new CleanWebpackPlugin(['dist/*'])
+		new CleanWebpackPlugin(['dist/*']),
+		new HtmlWebpackExternalsPlugin({ // optional plugin: inject cdn
+		      externals: [
+		        {
+		            module: 'jquery',
+      				entry: 'https://unpkg.com/jquery@3.2.1/dist/jquery.min.js',
+      				global: 'jQuery'
+		        }
+		      ],
+		    })
 	]
 }

@@ -7,7 +7,7 @@ module.exports = {
 	entry: { main: './src/index.js' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '/',
+		publicPath: '',
 		filename: 'index.js'
 	},
 	devServer: {
@@ -33,10 +33,13 @@ module.exports = {
 				test: /\.sass$/,
 				use: [
 						{loader: "style-loader"},
-					{loader: "css-loader"},
-					{loader: "sass-loader",
-				    	options: {implementation: require("sass")}
-					}
+						{loader: "css-loader"},
+						{loader: "sass-loader",
+				    		options: {
+				    			implementation: require("sass"),
+				    			name: '[name]_[hash:7].[ext]'
+				    		}
+						}
 				]
 			},
 			{test: /\.(pug|jade)$/, loader: 'pug-loader'},

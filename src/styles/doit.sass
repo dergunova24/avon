@@ -1,15 +1,16 @@
 #do-it
     background-image: url('img/doit.jpg')
     background-size: cover
-    background-position: 50% 50%
+    background-position: 30% 50%
     padding: 50px 0
     .do
         overflow: hidden
-        margin-left: 12%
+        margin-left: 35%
         picture
             float: left
         .description
             margin-top: 30px
+            padding-right: 20px
     #no-garantee
         width: 100%
         color: $pink
@@ -19,3 +20,29 @@
         text-align: right
         text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.84)
         box-sizing: border-box
+    @include respond-to(mobile-screens)
+        .do
+            margin-left: 20%
+            picture
+                img
+                    height: 110px
+            .description
+                margin-top: 10px
+        #no-garantee
+            font-size: 25px
+    @include respond-to(small-screens)
+        background-image: none
+        background-color: #eacbc9
+        .do
+            margin: 0 20px
+            picture
+                img
+                    height: 60px
+                    margin-top: 0
+            .description
+                margin-bottom: 20px
+                margin-left: 70px
+                padding-right: 10px
+        #no-garantee
+            text-align: left
+            padding-left: 20px

@@ -1,16 +1,22 @@
 #cards
-    padding: 50px 5%
+    padding: 20px 5%
     font-size: 0
+    text-align: center
     .card
         display: inline-block
         width: 31%
         margin: 0 1%
         box-sizing: border-box
         transition: ease 0.9s
+        margin-bottom: 20px
         img
             width: 100%
 
     .card:hover
         @include shadow
     @include respond-to(mobile-screens)
-        width: 31%
+        .card
+            width: 48%
+    @include respond-to(small-screens)
+        .card
+            width: 98%

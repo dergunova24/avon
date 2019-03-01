@@ -1,6 +1,7 @@
 'use strict';
 require('./style.sass');
 
+
 $(document).ready(function() {
 	$(window).scroll(function () {
 	    if ($(this).scrollTop() > 0) {
@@ -19,7 +20,13 @@ $(document).ready(function() {
 	
 	$('#quick-reg').click(function(e){
 	    if (!$('#agree-terms').prop('checked')) {
-	    	alert('Вы должны принять условия соглашения');
+	    	alert('Вы должны принять правила регистрации');
+	    	e.preventDefault();
+		}
+	});
+	$('#full-reg-bt').click(function(e){
+	    if (!$('#full-agree-terms').prop('checked')) {
+	    	alert('Вы должны принять правила регистрации');
 	    	e.preventDefault();
 		}
 	});
@@ -27,6 +34,18 @@ $(document).ready(function() {
 	$('.scrollbtn').click(function() {
 	   $('html, body').animate({
 	        scrollTop: $('#quik-form').offset().top - 20
-	    }, 200);
+	    }, 500);
+	});
+
+	$('span').click(function(e){
+		$('#policy').fadeIn();
+		$('html, body').animate({
+		     scrollTop: $('#policy').offset().top - 60
+		 }, 500);
+		e.preventDefault();
+	});
+
+	$('#policy').click(function(){
+		$('#policy').fadeOut();
 	});
 });

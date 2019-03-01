@@ -1,8 +1,77 @@
 #news
     background-image: url('img/news_bg.png')
     background-size: cover
-    background-position: 50% 50%
+    background-position: 70% 50%
+    padding: 50px 5% 70px 35%
     .post
-        display: inline
-        width: 50%
+        display: inline-block
+        width: 48%
+        box-sizing: border-box
+        vertical-align: top
+        margin: 0 1%
         @include sheet
+        padding: 30px
+        background-color: #eac4caa3
+        height: 450px
+        position: relative
+        margin-bottom: 20px
+        .title
+            margin-bottom:20px
+            display: block
+            color: $pink
+            font-weight: bold
+            font-size: 25px
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+        img
+            margin: 0 auto 20px auto
+            width: 160px
+            display: block
+        .button
+            position: absolute
+            bottom: 30px
+            right: 30px
+        .description
+            -ms-text-overflow: ellipsis
+            text-overflow: ellipsis
+            overflow: hidden
+            -ms-line-clamp: 6
+            -webkit-line-clamp: 6
+            line-clamp: 6
+            display: -webkit-box
+            display: box
+            word-wrap: break-word
+            -webkit-box-orient: vertical
+            box-orient: vertical
+            -ms-text-overflow: ellipsis
+
+            // 
+
+    @include respond-to(tablet-screens)
+        background-position: 60% 50%
+        padding: 50px 7% 70px 7%
+        .post
+            img
+                width: 120px
+    @include respond-to(mobile-screens)
+        background-position: 60% 50%
+        padding: 20px 5% 30px 5%
+        .post
+            display: inline-block
+            width: 98%
+            height: 300px
+            img
+                width: 100px
+                float: left
+                margin-right: 20px
+    @include respond-to(small-screens)
+        background-image: none
+        background-color: #f0d4cd
+        .post
+            padding: 20px 5% 20px 5%
+            border-radius: 5px
+            height: 240px
+            .title
+                font-size: 20px
+

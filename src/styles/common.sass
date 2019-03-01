@@ -20,6 +20,10 @@ h2
     margin-bottom: 50px
 a
      text-decoration: none
+span
+    cursor: pointer
+    color: $pink
+    vertical-align: top
 
 input[type='text'], input[type='tel'], input[type='email'], input[type='date'], select
     width: 80%
@@ -67,6 +71,7 @@ label
     margin-top: 20px
     border: none
     transition: ease 0.9s
+    text-align: center
 
 .button:hover
     background-color: $pink
@@ -79,7 +84,7 @@ label
     img
         margin: 0 auto
         display: block
-        margin-bottom: -100px
+        margin-bottom: -62px
 
 form
     width: 50%
@@ -89,6 +94,10 @@ form
         margin-bottom: 20px
         margin-left: 10%
         font-weight: bold
+    .column
+        display: inline-block
+        width: 50%
+        vertical-align: top
 
 .screen
     padding: 0
@@ -102,6 +111,11 @@ form
 @include respond-to(mobile-screens)
     h2
         font-size: 25px
+    form
+        margin-left: 0
+        width: 100%
+    input[type='checkbox']
+        margin-left: 10%
 @include respond-to(small-screens)
     body
         font-size: 15px
@@ -111,6 +125,8 @@ form
         width: 95%
         margin-bottom: 16px
         border-radius: 5px
+    input[type='checkbox']
+        margin-left: 2.5%
     .button
         height: 40px
         line-height: 40px

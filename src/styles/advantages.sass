@@ -1,14 +1,15 @@
 #advantages
     font-size: 0
-    padding: 0 10%
+    padding: 20px 10%
     .advantage
         vertical-align: top
         display: inline-block
-        width: 50%
-        padding: 0 3% 30px 3%
+        width: 25%
+        padding: 15px 3% 30px 3%
         margin-bottom: 50px
         box-sizing: border-box
         cursor: pointer
+        border-radius: 5px
         picture
             display: block
             overflow: hidden
@@ -24,9 +25,32 @@
         .description
             font-size: 14px
             text-align: center
-            min-height: 50px
+            min-height: 100px
+            margin-top: 20px
 
     .advantage:hover
-        @include shadow
+        -webkit-box-shadow: 10px 10px 39px -2px rgba(0,0,0,0.41)
+        -moz-box-shadow: 10px 10px 39px -2px rgba(0,0,0,0.41)
+        box-shadow: 10px 10px 39px -2px rgba(0,0,0,0.41)
         transform: scale(1.1)
         transition: ease 0.5s
+        position: relative
+        z-index: 2
+    @include respond-to(mobile-screens)
+        padding: 20px 5%
+        .advantage
+            width: 50%
+            margin-bottom: 0
+            .description
+                min-height: 70px
+    @include respond-to(small-screens)
+        h2
+            margin-bottom: 70px
+        .advantage
+            width: 80%
+            display: block
+            margin: 0 auto 30px auto
+            padding: 0
+        picture
+            img
+                height: 100px

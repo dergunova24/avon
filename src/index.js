@@ -33,11 +33,11 @@ $(document).ready(function() {
 
 	$('.scrollbtn').click(function() {
 	   $('html, body').animate({
-	        scrollTop: $('#quik-form').offset().top - 20
+	        scrollTop: $('#quick-form').offset().top - 20
 	    }, 500);
 	});
 
-	$('span').click(function(e){
+	$('.show-policy').click(function(e){
 		$('#policy').fadeIn();
 		$('html, body').animate({
 		     scrollTop: $('#policy').offset().top - 60

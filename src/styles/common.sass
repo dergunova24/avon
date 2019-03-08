@@ -5,7 +5,7 @@
 
 @mixin sheet
     background-color: $sheet
-    padding: 20px
+    padding: 15px
     border-radius: 15px
 body
     font-family: "GothaProLig", sans-serif
@@ -30,7 +30,6 @@ input[type='text'], input[type='tel'], input[type='email'], input[type='date'], 
     display: block
     margin: 0 auto
     height: 35px
-    margin-bottom: 20px
     border-radius: 10px
     padding-left: 15px
     font-size: 17px
@@ -57,7 +56,7 @@ label
     height: 30px
     line-height: 30px
     vertical-align: top
-.button
+@mixin button
     width: 270px
     height: 60px
     line-height: 60px
@@ -72,12 +71,16 @@ label
     border: none
     transition: ease 0.9s
     text-align: center
-
-.button:hover
+    padding: 0 !important
+    text-shadow: none !important
+@mixin button_hover
     background-color: $pink
     cursor: pointer
     @include shadow
-
+.button
+    @include button
+.button:hover
+    @include button_hover
 #header-back
     width: 100%
     display: block
@@ -91,13 +94,17 @@ form
     margin: 0 auto
     padding-bottom: 40px
     h3
-        margin-bottom: 20px
-        margin-left: 10%
+        margin: 20px 0 20px 10%
         font-weight: bold
     .column
         display: inline-block
-        width: 50%
+        width: 49%
         vertical-align: top
+
+    // Contact Form 7 Hack
+    span[role="alert"]
+        margin-top: 8px !important
+        margin-left: 10% !important
 
 .screen
     padding: 0
@@ -114,6 +121,9 @@ form
     form
         margin-left: 0
         width: 100%
+        // Contact Form 7 Hack
+        span[role="alert"]
+            margin-left: 0 !important
     input[type='checkbox']
         margin-left: 10%
 @include respond-to(small-screens)

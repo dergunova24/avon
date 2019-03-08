@@ -1,0 +1,27 @@
+footer
+    background-color: $pink
+    color: white
+    padding: 30px
+    #signature
+        width: 50%
+        text-align: left
+        display: inline-block
+        font-size: 25px
+        letter-spacing: 15px
+    #contact
+        width: 50%
+        text-align: right
+        display: inline-block
+        p
+            display: inline
+            margin-right: 10px
+        a
+            color: white
+    @include respond-to(small-screens)
+        #signature
+            font-size: 20px
+            width: 33%
+        #contact
+            width: 65%
+            p
+                display: none

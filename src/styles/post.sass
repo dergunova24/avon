@@ -1,0 +1,24 @@
+.wp-post-image
+    margin: 0 auto
+    display: block
+    margin-bottom: 30px
+    border-radius: 10px
+    @include respond-to(small-screens)
+        width: 100%
+        height: auto
+.nav-links
+    min-height: 100px
+    text-align: center
+    margin-bottom: 100px
+    .nav-previous, .nav-next
+        margin: 0 5px
+        display: inline-block
+    a
+        .meta-nav
+            display: none
+        .post-title
+            @include button
+        .post-title:hover
+            @include button_hover
+
+

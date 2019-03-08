@@ -1,7 +1,22 @@
 doctype html
 html
   head
-    title 'AVON Norm'
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width")
+    meta(name="format-detection", content="telephone=no")
+    meta(name="description", content="Регистрация в Эйвон не накладывает никаких обязательств на сумму или переодичность заказов. Вы просто получаете комьютерный номер и можете приобрести товары со скидкой 30%")
+    meta(name="keywords", content="avon, эйвон, регистрация представителем, работа в эйвон, стать предствителем avon")
+    title AVON NORM
+    script(type='text/javascript').
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(52550428, "init", {
+      id:52550428,
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
+      });
   body
     #header.screen
       .screen-content
@@ -9,8 +24,8 @@ html
         a#contact-phone(href='tel:+89022323206') 8 (902) 232-32-06
         #caption Стань представителем Эйвон!
         #genertext Регистрация представителем Эйвон не накладывает никаких обязательств, ни по минимальной сумме, ни по периодичности заказа. Регистрация лишь дает возможность покупать качественную косметику (и не только) со скидками до 30% и дополнительным призом.
-        h2 Успей зарегистрироваться!
-        form(action='reg.php')#quik-form
+        h2#quick-form Успей зарегистрироваться!
+        form(action='reg.php')
           input(type='tel', name='phone', placeholder='+7(xxx) xxx-xx-xx')
           input(type='text', name='firstname', placeholder='Имя')
           input(type='text', name='lastname', placeholder='Фамилия')
@@ -19,108 +34,107 @@ html
           input(type='date', name='birthdate', placeholder='Дата рождения')
           input(type='text', name='address', placeholder='Ваш адрес')
           input#agree-terms(type='checkbox')
-          label(for='agree-terms')
-                    | Принимаю 
-                    span правила регистрации
+          label(for='agree-terms')  Принимаю 
+          .show-policy правила регистрации
           input.button#quick-reg(type='submit', value='Зарегистрироваться')
     #cards.screen
         picture.card
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card1.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card1.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/card1.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/card1.png'))
         picture.card
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card2.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card2.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/card2.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/card2.png'))
         picture.card
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/card3.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/card3.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/card3.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/card3.png'))
     #advantages.screen
         picture#header-back
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/h2.png'))
         h2 Преимущества Avon
         .advantage
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage1.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage1.png'))
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/advantage1.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/advantage1.png'))
             .title Удобная доставка
-            .description Множество видов доставки – от курьерской, до доставки в постоматы или почтовые отделения
+            .descr-iption Множество видов доставки – от курьерской, до доставки в постоматы или почтовые отделения
         .advantage
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage2.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage2.png'))
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/advantage2.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/advantage2.png'))
             .title Сертификат
-            .description Вся продукция имеет необходимые сертификаты по всем категориям
+            .descr-iption Вся продукция имеет необходимые сертификаты по всем категориям
         .advantage
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage3.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage3.png'))
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/advantage3.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/advantage3.png'))
             .title Доступ
-            .description Доступ к специальным каталогам, акциям, распродажам и скидкам, которые доступны только представителям компании
+            .descr-iption Доступ к специальным каталогам, акциям, распродажам и скидкам, которые доступны только представителям компании
         .advantage
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/advantage4.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/advantage4.png'))
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/advantage4.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/advantage4.png'))
             .title Множество товаров
-            .description Тысячи товаров, от косметики до одежды, кухонных принадлежностей и стильных аксессуаров
+            .descr-iption Тысячи товаров, от косметики до одежды, кухонных принадлежностей и стильных аксессуаров
     #do-it.screen
         .do
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
-            .description Получай за заказы баллы и приобретай продукцию с дополнительными скидками. Все это для представителей AVON
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/check.png'))
+            .descr-iption Получай за заказы баллы и приобретай продукцию с дополнительными скидками. Все это для представителей AVON
         .do
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
-            .description Возможность независимого заработка – десятки тысяч людей строят карьеру вместе с Эйвон. Мы окажем вам подробную консультацию и ответим на все вопросы
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/check.png'))
+            .descr-iption Возможность независимого заработка – десятки тысяч людей строят карьеру вместе с Эйвон. Мы окажем вам подробную консультацию и ответим на все вопросы
         .do
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/check.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/check.png'))
-            .description Вы получите нашу поддержку – мы не оставим вас наедине со сложностями. Мы всегда окажем вам необходимую консультацию и по вопросам размещения заказа и по возможности заработка
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/check.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/check.png'))
+            .descr-iption Вы получите нашу поддержку – мы не оставим вас наедине со сложностями. Мы всегда окажем вам необходимую консультацию и по вопросам размещения заказа и по возможности заработка
         #no-garantee Без обязательств!
     #steps.screen
         picture#header-back
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/h2.png'))
         h2 Этапы регистрации в Avon
         .step
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step1.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step1.png'))
-            .description Вы оставляете на сайте заявку
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/step1.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/step1.png'))
+            .descr-iption Вы оставляете на сайте заявку
         .step
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step2.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step2.png'))
-            .description Перезваниваем Вам для подтверждения заявки
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/step2.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/step2.png'))
+            .descr-iption Перезваниваем Вам для подтверждения заявки
         .step
             picture
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/step3.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/step3.png'))
-            .description Вы получаете специальный номер, который и дает доступ ко всем возможностям и преимуществам представителя AVON
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/step3.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/step3.png'))
+            .descr-iption Вы получаете специальный номер, который и дает доступ ко всем возможностям и преимуществам представителя AVON
         .button.scrollbtn Зарегистрироваться
     #news.screen
         picture#header-back
-            source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
-            img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+            source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name].[ext]!./img/h2.png'))
         h2 Новости и акции сайта
         .post
             a.title(href='ya.ru') Скачайте новый каталог №4
-            img(src=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
-            .description LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
+            img(src=require('!!file-loader?name=[name].webp!./img/h2.png'))
+            .descr-iption LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
             a.download.button(href='ya.ru') Скачать
         .post
             a.title(href='ya.ru') Самая лучшая новость
-            img(src=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
+            img(src=require('!!file-loader?name=[name].webp!./img/h2.png'))
             .d-wrapper
-                .description LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim. LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
+                .descr-iption LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim. LoremIn magna fugiat pariatur quis voluptate culpa sit occaecat sed exercitation consequat elit sunt sed non. Laborum esse veniam magna nisi et nostrud elit consectetur magna in laborum amet consectetur sed consequat dolor aliqua enim.
             a.download.button(href='ya.ru') Скачать
     #full-reg.screen
         .screen-content
             picture#header-back
-                source(type='image/webp', srcset=require('!!file-loader?name=[name]_[hash:7].webp!./img/h2.png'))
-                img(src=require('!!file-loader?name=[name]_[hash:7].[ext]!./img/h2.png'))
+                source(type='image/webp', srcset=require('!!file-loader?name=[name].webp!./img/h2.png'))
+                img(src=require('!!file-loader?name=[name].[ext]!./img/h2.png'))
             h2 Полная регистрация
             form(action='fullreg.php')#full-form
                 .column
@@ -226,10 +240,86 @@ html
                     input(type='text', name='real_korpus', placeholder='Корпус')
                     input(type='text', name='real_apartament', placeholder='Квартира')
                     h3 Адрес фактического проживания
-                    input#adresses-match(type='checkbox')
-                    label(for='agree-terms') Совпадает с адресом постоянного проживания
                     input(type='text', name='fact_postindex', placeholder='Почтовый индекс')
-                    input(type='text', name='fact_region', placeholder='Регион')
+                    select Регион
+                        option(value="0") Выберите область
+                        option(value="АЛТАЙ РЕСПУБЛИКА") АЛТАЙ РЕСПУБЛИКА
+                        option(value="АЛТАЙСКИЙ КРАЙ") АЛТАЙСКИЙ КРАЙ
+                        option(value="АМУРСКАЯ") АМУРСКАЯ
+                        option(value="АРХАНГЕЛЬСКАЯ") АРХАНГЕЛЬСКАЯ
+                        option(value="АСТРАХАНСКАЯ") АСТРАХАНСКАЯ
+                        option(value="БАШКИРИЯ РЕСП") БАШКИРИЯ РЕСП
+                        option(value="БЕЛГОРОДСКАЯ") БЕЛГОРОДСКАЯ
+                        option(value="БРЯНСКАЯ") БРЯНСКАЯ
+                        option(value="БУРЯТИЯ РЕСП") БУРЯТИЯ РЕСП
+                        option(value="ВЛАДИМИРСКАЯ") ВЛАДИМИРСКАЯ
+                        option(value="ВОЛГОГРАДСКАЯ") ВОЛГОГРАДСКАЯ
+                        option(value="ВОЛОГОДСКАЯ") ВОЛОГОДСКАЯ
+                        option(value="ВОРОНЕЖСКАЯ") ВОРОНЕЖСКАЯ
+                        option(value="ЕВРЕЙСКАЯ АВТОНОМНАЯ ОБ") ЕВРЕЙСКАЯ АВТОНОМНАЯ ОБ
+                        option(value="ЗАБАЙКАЛЬСКИЙ КРАЙ") ЗАБАЙКАЛЬСКИЙ КРАЙ
+                        option(value="ИВАНОВСКАЯ") ИВАНОВСКАЯ
+                        option(value="ИРКУТСКАЯ") ИРКУТСКАЯ
+                        option(value="КАЛИНИНГРАДСКАЯ") КАЛИНИНГРАДСКАЯ
+                        option(value="КАЛМЫКИЯ РЕСП") КАЛМЫКИЯ РЕСП
+                        option(value="КАЛУЖСКАЯ") КАЛУЖСКАЯ
+                        option(value="КАРАЧАЕВО-ЧЕРКЕССКАЯ РЕ") КАРАЧАЕВО-ЧЕРКЕССКАЯ РЕ
+                        option(value="КАРЕЛИЯ РЕСП") КАРЕЛИЯ РЕСП
+                        option(value="КЕМЕРОВСКАЯ") КЕМЕРОВСКАЯ
+                        option(value="КИРОВСКАЯ") КИРОВСКАЯ
+                        option(value="КОМИ РЕСП") КОМИ РЕСП
+                        option(value="КОСТРОМСКАЯ") КОСТРОМСКАЯ
+                        option(value="КРАСНОДАРСКИЙ КРАЙ") КРАСНОДАРСКИЙ КРАЙ
+                        option(value="КРАСНОЯРСКИЙ КРАЙ") КРАСНОЯРСКИЙ КРАЙ
+                        option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                        option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                        option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                        option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                        option(value="КРЫМ РЕСП") КРЫМ РЕСП
+                        option(value="КУРГАНСКАЯ") КУРГАНСКАЯ
+                        option(value="КУРСКАЯ") КУРСКАЯ
+                        option(value="ЛЕНИНГРАДСКАЯ") ЛЕНИНГРАДСКАЯ
+                        option(value="ЛИПЕЦКАЯ") ЛИПЕЦКАЯ
+                        option(value="МАРИЙ ЭЛ РЕСП") МАРИЙ ЭЛ РЕСП
+                        option(value="МОРДОВИЯ РЕСП") МОРДОВИЯ РЕСП
+                        option(value="МОСКВА") МОСКВА
+                        option(value="МОСКОВСКАЯ") МОСКОВСКАЯ
+                        option(value="МУРМАНСКАЯ") МУРМАНСКАЯ
+                        option(value="НИЖЕГОРОДСКАЯ") НИЖЕГОРОДСКАЯ
+                        option(value="НОВГОРОДСКАЯ") НОВГОРОДСКАЯ
+                        option(value="НОВОСИБИРСКАЯ") НОВОСИБИРСКАЯ
+                        option(value="ОМСКАЯ") ОМСКАЯ
+                        option(value="ОРЕНБУРГСКАЯ") ОРЕНБУРГСКАЯ
+                        option(value="ОРЛОВСКАЯ") ОРЛОВСКАЯ
+                        option(value="ПЕНЗЕНСКАЯ") ПЕНЗЕНСКАЯ
+                        option(value="ПЕРМСКИЙ КРАЙ") ПЕРМСКИЙ КРАЙ
+                        option(value="ПРИМОРСКИЙ КРАЙ") ПРИМОРСКИЙ КРАЙ
+                        option(value="ПСКОВСКАЯ") ПСКОВСКАЯ
+                        option(value="РОСТОВСКАЯ") РОСТОВСКАЯ
+                        option(value="РЯЗАНСКАЯ") РЯЗАНСКАЯ
+                        option(value="САМАРСКАЯ") САМАРСКАЯ
+                        option(value="САНКТ-ПЕТЕРБУРГ") САНКТ-ПЕТЕРБУРГ
+                        option(value="САРАТОВСКАЯ") САРАТОВСКАЯ
+                        option(value="САХАЛИНСКАЯ") САХАЛИНСКАЯ
+                        option(value="СВЕРДЛОВСКАЯ") СВЕРДЛОВСКАЯ
+                        option(value="СМОЛЕНСКАЯ") СМОЛЕНСКАЯ
+                        option(value="СТАВРОПОЛЬСКИЙ КРАЙ") СТАВРОПОЛЬСКИЙ КРАЙ
+                        option(value="ТАМБОВСКАЯ") ТАМБОВСКАЯ
+                        option(value="ТАТАРСТАН РЕСП") ТАТАРСТАН РЕСП
+                        option(value="ТВЕРСКАЯ") ТВЕРСКАЯ
+                        option(value="ТОМСКАЯ") ТОМСКАЯ
+                        option(value="ТУЛЬСКАЯ") ТУЛЬСКАЯ
+                        option(value="ТЫВА РЕСПУБЛИКА") ТЫВА РЕСПУБЛИКА
+                        option(value="ТЮМЕНСКАЯ") ТЮМЕНСКАЯ
+                        option(value="УДМУРТСКАЯ РЕСП") УДМУРТСКАЯ РЕСП
+                        option(value="УЛЬЯНОВСКАЯ") УЛЬЯНОВСКАЯ
+                        option(value="УСТЬ-ОРДЫНСКИЙ АО") УСТЬ-ОРДЫНСКИЙ АО
+                        option(value="ХАБАРОВСКИЙ КРАЙ") ХАБАРОВСКИЙ КРАЙ
+                        option(value="ХАКАСИЯ РЕСП") ХАКАСИЯ РЕСП
+                        option(value="ХАНТЫ-МАНСИЙСКИЙ АО") ХАНТЫ-МАНСИЙСКИЙ АО
+                        option(value="ЧЕЛЯБИНСКАЯ") ЧЕЛЯБИНСКАЯ
+                        option(value="ЧУВАШСКАЯ РЕСП") ЧУВАШСКАЯ РЕСП
+                        option(value="ЯРОСЛАВСКАЯ") ЯРОСЛАВСКАЯ
                     input(type='text', name='fact_district', placeholder='Район')
                     input(type='text', name='fact_location', placeholder='Населенный пункт')
                     input(type='text', name='fact_street', placeholder='Улица')
@@ -243,7 +333,7 @@ html
                 input#full-agree-terms(type='checkbox')
                 label(for='agree-terms')
                     | Принимаю 
-                    span правила регистрации
+                    span.show-policy правила регистрации
                 input.button#full-reg-bt(type='submit', value='Зарегистрироваться')
     #to-top
         img(src=require("./img/arrow.svg"))
@@ -320,3 +410,8 @@ html
         p 9.1. Администрация сайта вправе вносить изменения в настоящую Политику конфиденциальности без согласия Пользователя.
         p 9.2. Новая Политика конфиденциальности вступает в силу с момента ее размещения на Сайте интернет-магазина, если иное не предусмотрено новой редакцией Политики конфиденциальности.
         p 9.3. Все предложения или вопросы по настоящей Политике конфиденциальности следует сообщать по электронной почте
+    footer
+        #signature AVON NORM
+        #contact
+            p Email для связи:
+            a(href="mailto:dergunova24@yandex.ru") dergunova24@yandex.ru

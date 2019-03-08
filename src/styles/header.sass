@@ -2,6 +2,7 @@
     background-image: url('img/header.webp')
     background-size: cover
     background-position: 0% 50%
+    min-height: 900px
     .screen-content
         margin: 0 auto 0 7%
     form
@@ -93,8 +94,11 @@
             text-align: center
         
     @include respond-to(small-screens)
+        min-height: 750px
         background-image: none
         background-color: #f1f1f1
+        .screen-content
+            margin: 0
         h1
             font-size: 32px
             height: 42px

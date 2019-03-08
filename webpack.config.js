@@ -7,7 +7,8 @@ module.exports = {
 	entry: { main: './src/index.js' },
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '',
+		// publicPath: '<?= esc_url(get_template_directory_uri()) ?>/',
+		publicPath: '/',
 		filename: 'index.js'
 	},
 	devServer: {
@@ -37,7 +38,7 @@ module.exports = {
 						{loader: "sass-loader",
 				    		options: {
 				    			implementation: require("sass"),
-				    			name: '[name]_[hash:7].[ext]'
+				    			name: '[name].[ext]'
 				    		}
 						}
 				]
@@ -46,14 +47,14 @@ module.exports = {
 			{test: /\.(gif|svg|webp)$/i,
 				loader: "file-loader",
 				options: {
-					name: '[name]_[hash:7].[ext]',
+					name: '[name].[ext]',
 				}
 			},
 			{
 				test: /\.(jpe?g|png)$/i,
 				loader: multi(
-					'file-loader?name=[name]_[hash:7].webp!webp-loader?{quality: 95}',
-					'file-loader?name=[name]_[hash:7].[ext]'
+					'file-loader?name=[name].webp!webp-loader?{quality: 89}',
+					'file-loader?name=[name].[ext]'
 				)
 			}
 		]
